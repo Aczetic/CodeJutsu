@@ -1,0 +1,131 @@
+#nav-parent {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  position: relative;
+}
+
+#nav-parent #logo {
+  width: 7rem;
+  height: 3rem;
+  font-weight: bolder;
+  font-size: 2rem;
+  background: url("../img/logo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#nav-parent .nav {
+  display: flex;
+  gap: 2rem;
+  font-weight: 500;
+  align-items: center;
+  font-size: 1rem;
+}
+
+#nav-parent #nav-mobile {
+  display: none;
+}
+
+#nav-parent #members-area-btn {
+  background-color: var(--primary-text-color);
+  color: var(--background-color);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem;
+  height: fit-content;
+  align-self: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+#nav-parent a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+#nav-parent a:hover {
+  color: var(--primary-text-color);
+  text-shadow: 0 0 10px white;
+}
+#nav-parent a.active {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  text-shadow: 0 0 15px rgb(215, 214, 214);
+}
+
+@media (max-width: 1024px) {
+  #nav-parent {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+  }
+
+  #nav-parent #logo {
+    width: 3rem;
+    height: 3rem;
+    font-weight: bolder;
+    font-size: 2rem;
+    background: url("../img/logo.png");
+    background-size: 230%;
+    background-repeat: no-repeat;
+    background-position: 0;
+  }
+
+  #nav-parent .nav {
+    display: none;
+  }
+  #nav-parent #nav-mobile {
+    order: 2;
+    width: 1.5rem;
+    height: 3rem;
+    display: block;
+  }
+  #nav-parent #nav-mobile .nav {
+    backdrop-filter: blur(20px);
+    background-color: rgba(5, 5, 5, 0.2);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    gap: 2rem;
+    font-weight: 500;
+    align-items: center;
+    font-size: 1rem;
+  }
+  #nav-parent #members-area-btn {
+    order: 1;
+    background-color: var(--primary-text-color);
+    color: var(--background-color);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    height: fit-content;
+    align-self: center;
+    user-select: none;
+  }
+  #nav-parent #close-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 0.7rem;
+    color: white;
+    z-index: 100;
+    cursor: pointer;
+    user-select: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}

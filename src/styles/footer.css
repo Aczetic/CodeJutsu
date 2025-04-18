@@ -1,0 +1,38 @@
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+#footer a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+#footer a:hover {
+  color: var(--primary-text-color);
+  text-shadow: 0 0 10px white;
+}
+
+#footer #agreements {
+  display: flex;
+  gap: 1rem;
+}
+
+#footer #icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  #footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
