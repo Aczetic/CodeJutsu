@@ -8,13 +8,14 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import ClockIcon from "@mui/icons-material/AccessTimeFilled";
 import { CodeBlock } from "react-code-blocks";
-import aClearPathToMasterCoding from "../img/aClearPathToMasterCoding.png";
-import decadesOfCodingSharedWithYour from "../img/decadesOfCodingSharedWithYour.webp";
-import deepUnderstandingAndNotJustShortCuts from "../img/deepUnderstandingAndNotJustShortCuts.webp";
-import getReadyForRealWorldWork from "../img/getReadyForRealWorldWork.webp";
-import joinAGlobalCommunityOfLearners from "../img/joinAGlobalCommunityOfLearners.webp";
-import straightForwardAndToThePoint from "../img/straightForwardAndToThePoint.webp";
-import code from "../img/code.png";
+import aClearPathToMasterCoding from "../assets/img/home/aClearPathToMasterCoding.png";
+import decadesOfCodingSharedWithYour from "../assets/img/home/decadesOfCodingSharedWithYour.webp";
+import deepUnderstandingAndNotJustShortCuts from "../assets/img/home/deepUnderstandingAndNotJustShortCuts.webp";
+import getReadyForRealWorldWork from "../assets/img/home/getReadyForRealWorldWork.webp";
+import joinAGlobalCommunityOfLearners from "../assets/img/home/joinAGlobalCommunityOfLearners.webp";
+import straightForwardAndToThePoint from "../assets/img/home/straightForwardAndToThePoint.webp";
+import code from "../assets/img/home/code.png";
+import { NavLink } from "react-router";
 //todo:create and add a video
 // todo start the animation on numbers when visible
 
@@ -223,8 +224,11 @@ const Home = () => {
             fields
           </div>
           <div id="buttons">
-            <div class="button a">Browse Courses</div>
-            <div class="button b">Join for free</div>
+            <NavLink to="/courses">
+              <div className="button a">Browse Courses </div>
+            </NavLink>
+
+            <div className="button b">Join for free</div>
             {/* TODO:make these buttons functional */}
           </div>
         </div>

@@ -6,6 +6,7 @@
 
 :root {
   --background-color: rgb(3 5 10);
+  --secondary-background-color: rgb(26, 27, 29);
   --primary-text-color: rgb(204, 204, 204);
   --gradient-background: linear-gradient(
     90deg,
