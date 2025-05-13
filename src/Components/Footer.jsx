@@ -8,7 +8,7 @@ import "../styles/footer.css";
 const Footer = () => {
   return (
     <div id="footer">
-      <NavLink to={"/"}>© Code with Mosh</NavLink>
+      <NavLink to={"/"}>© Code Jutsu</NavLink>
       <div id="icons">
         <NavLink to={"/"}>
           <InstagramIcon />
