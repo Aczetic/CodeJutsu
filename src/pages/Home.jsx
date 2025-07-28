@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../styles/home.css";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
@@ -21,14 +21,35 @@ import { NavLink } from "react-router";
 
 const NumericCard = ({ color, value, text }) => {
   const [count, setCount] = useState(0);
+  const elemRef = useRef();
+  const isReadyRef = useRef(false);
+
+  useEffect(()=>{
+    const listener = ()=>{
+      const rect = elemRef.current.getBoundingClientRect();
+     
+      if(rect.top <= window.innerHeight && isReadyRef.current === false){//when the addition is not ready only then otherwise no need
+        isReadyRef.current = true;
+        setCount(count + value / 150);
+      }
+    }
+    window.addEventListener('scroll', listener)
+    listener();// calling listener here so that on first load if the element is already visible then animation should start 
+    // and not wait for scrolling 
+
+    return ()=>{
+      window.removeEventListener('scroll',listener);
+    }
+  },[])
+
   useEffect(() => {
-    console.log("call");
-    if (count < value) {
+    if (count < value && isReadyRef.current) {
       setTimeout(() => setCount(count + value / 150), 30);
     }
   }, [count]);
+
   return (
-    <div className="numeric-box" id={color + "-numeric-box"}>
+    <div ref = {elemRef} className="numeric-box" id={color + "-numeric-box"}>
       <div id={`${color}-count`}>
         {Math.floor(count) > value ? value : Math.round(count)}+
       </div>
